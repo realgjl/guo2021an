@@ -1,6 +1,5 @@
 \documentclass[12pt]{report}
 \usepackage{suthesis}
-%\documentstyle[12pt,suthesis]{report}
 
 % -- Imports --
 % (general libraries)
@@ -103,8 +102,8 @@
 
 % Preface
 \beforepreface
-%\input{chapters/abs.tex}
-%\input{chapters/ack.tex}
+\input{chapters/abs.tex}
+\input{chapters/ack.tex}
 \afterpreface
 \hypersetup{linkcolor=magenta}
 
@@ -112,20 +111,30 @@
 % -- Sections --
 % Introduction
 \chapter{Introduction}
-\label{chapter:intro}
-\input{chapters/intro}
+\label{chapter:Introduction}
+\input{chapters/Introduction}
+
 
 % Literature Review
 \chapter{Literature Review}
-\label{chapter:review}
-\input{chapters/review}
+\label{chapter:Review}
+\input{chapters/Review}
+
+% Methodology
+\chapter{Methodology}
+\label{chapter:Methodology}
+\input{chapters/Methodology}
 
 
+% Results
+\chapter{Results}
+\label{chapter:Results}
+\input{chapters/Results}
 
 % Conclusion
-%\chapter{Conclusions}
-%\label{chapter:conclusions}
-%\input{chapters/conclude}
+\chapter{Conclusions and Future Work}
+\label{chapter:Conclusions_and_Future_Work}
+\input{chapters/Conclusions_and_Future_Work}
 
 % Bibliography
 \bibliographystyle{bartlett_harvard_ref}
