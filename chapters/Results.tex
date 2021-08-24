@@ -37,6 +37,18 @@ Figure~\ref{fig:test_batch1_pred} shows the prediction results during the traini
 
 \newpage
 \section{Detection Results and Vessel Composition}
+
+In Sec~\ref{sec3.2.3}, I discussed the method of detecting small boats. Most for the result, I will test the length of two small boats on a certain sea. The results are shown in Figure~\ref{fig:length_test}. A smaller boat Google Earth Pro measured 6.98 meters, while the algorithm detected a length of 6.744 meters. The error between them is 3.38\%. The other larger boat Google Earth Pro measured 41.38 meters in length, and the algorithm detected 40.984 meters. The error between them is 0.96\%. After testing, the length of the boat detected by the algorithm was within the error range.\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{img/length_test.png}
+    \caption{Test the length of boat.}
+    \label{fig:length_test}
+\end{figure}
+
+
+
 As explained in Sec~\ref{sec3.2.1}, it was unwise to select the entire region for the study due to the uneven amount of data that Google Earth Pro has provided for the Gulf of California over the past three years. Therefore, three areas with more data were chosen: Santa Rosalia, Loreto, and Guaymas. Ultimately, satellite images of these three areas were found for 2019, 2020, and 2021, for a total of 690 images. Each of the 690 images is a satellite image with an eye altitude of 200 metres and a resolution of 3840x2160.\\
 
 However, as stated in Sec~\ref{sec3.2.2}, some of the slightly earlier satellite images had inferior detail representation capabilities, which resulted in the model not being very good at accurately identifying the features of the target, so that many small boats in the Gulf of California could not actually be identified. However, after enhancement with the 5x5 sharpening kernel, the recognition rate of the model was significantly improved. However, the following situations still occur.\\
@@ -317,10 +329,11 @@ Small White Boats                      & 32  & 46  \\ \hline
 As can be seen from the table above, most of the boats in the three regions are white, i.e., all can be classified as recreational boats for domestic use. However, this conclusion is imperfect because:
 
 \begin{enumerate}
-    \item in determining whether the boats are white or not, I created a function with RGB as the independent variable. I required the output of this function to be greater than a particular value (threshold). However, adjusting the parameters of this function is both complex and imprecise. Is it possible, then, that this threshold value accurately describes the colour of the boat?
+    \item in determining whether the boats are white or not, I created a function with RGB as the independent variable. I required the output of this function to be greater than a particular value (threshold). However, adjusting the parameters of this function can in a certain sense only be based on experience. So, does this threshold accurately identify the boat as being white in colour?
     
     \item if it is possible to roughly determine the type of small boat based on colour alone, is it possible that a dark coloured fishing boat is not identified on dark coloured seas? Would the number of fishing boats, in fact, then be greater?
     
     \item the satellite images capture only a moment in time during the year, are the fishing vessels operating slightly further out to sea and not captured by the satellite due to the nature of the fishing vessels?
 \end{enumerate}
 
+Therefore, although there are many uncertainties in identifying the colour of the boats, the algorithm also takes into account situations where the colour of the boats is not pure white due to atmospheric refraction, weather interference, cloud interference etc., i.e. the algorithm also takes into account situations where the colour of the boats is light. This is still acceptable from the point of view of algorithm complexity, results and the quality of the detecting data.

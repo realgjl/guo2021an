@@ -46,10 +46,30 @@ However, in developing countries, it tends to be a mixed bag on the level of pre
 
 Observing the shipping activity in the Gulf of California is essential due to its unique geographical location, conformation, and biophysical environment ~\cite{LLUCHCOTA20071, munguia2018ecological, MARINONE2012133}. In the Gulf of California, there is the largest fish producing state (Sonora) in Mexico~\cite{MELTZER2006222} and the most prominent sports fishing destination (Los Cabos, Baja) in Mexico~\cite{hernandez2012economic}. Besides, the Gulf of California has a faster shipping route to mainland Mexico than from Yucatán Peninsula.\\
 
-\subsection{Bringing Image Recognition in Satellite Images Detection}
+\subsection{Bringing Convolutional Neural Networks in Satellite Images Detection}
+Bringing convolutional neural networks to the field of satellite image recognition is important. First, the threshold of satellite image recognition is gradually decreasing. As the quality and quantity of global satellite images improve, obtaining the same or even better detection results with reduced parameters and complexity of convolutional neural networks is possible. Second, satellite image recognition is not new. A current PhD at the University of Texas at Austin focuses on using machine learning and remote sensing imagery to discover undersea shipwrecks ~\cite{character2021archaeologic}. However, as Figure~\ref {fig:shipwrecks} shows, discovering submarine wrecks does not require algorithms to describe the location and size of the wreck very precisely, as opposed to precisely identifying and measuring the length of a small boat. Therefore, in this thesis, accurately measuring the dimensions of small ships is definitely a challenge and a rewarding thing to do.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{img/shipwrecks.png}
+    \caption{Caption}
+    \label{fig:shipwrecks}
+\end{figure}
+
 
 \section{Research Questions}
+This article aims to determine whether image recognition such as convolutional neural networks can be used to successfully find boats with a length of 24 meters or less on the sea surface, and classify the boats according to their attributes.
 
+Although the target detection technology based on convolutional neural networks is now mature, it is not easy to measure accurately to the centimeter level. Should convolutional neural network or image recognition technology be an effective solution? If effective, can this method be extended to a larger sea area to detect more different types of boats? The research questions to be completed in this paper are detailed as follows:
+
+\begin{enumerate}[(a)]
+
+    \item What is the small-boat fleet numbers and composition around the Gulf of California?
+    
+    \item How accurate is the image machine-learning algorithm that recognises the small boat?
+    
+    \item How this algorithm can be scaled up for the rest of Mexico/west coast of the U.S.A.?
+\end{enumerate}
 
 \section{Thesis Outline}
 
